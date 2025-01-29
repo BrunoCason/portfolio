@@ -26,7 +26,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="hidden md:flex justify-between items-center">
+      <header className="hidden md:flex justify-between items-center my-4">
         <p className="font-bold text-3xl text-gray-900">Logo</p>
         <nav className="flex items-center gap-6">
           <ul className="flex list-none items-center gap-6 text-gray-600">
@@ -52,7 +52,7 @@ const Header = () => {
         </nav>
       </header>
 
-      <header className="flex md:hidden justify-between items-center">
+      <header className="flex md:hidden justify-between items-center my-4">
         <p className="font-bold text-3xl text-gray-900">Logo</p>
         <button onClick={toggleSidebar} aria-label="Open Menu">
           <Menu className="w-6 h-6 text-gray-600" />

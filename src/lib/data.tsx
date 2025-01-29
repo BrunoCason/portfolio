@@ -117,3 +117,58 @@ export const experience = [
     ],
   },
 ];
+
+export const projects = [
+  {
+    name: 'Wingie',
+    description:
+      'A platform for comparing and finding affordable flights, as well as booking and purchasing tickets safely and easily in a few simple clicks.',
+    url: 'https://www.wingie.com',
+    technologies: [
+      'React',
+      'Typescript',
+      'React Bootstrap',
+      'Firebase',
+      'Express.js',
+      'PostgreSQL',
+      'Styled Components',
+      'Redux',
+    ],
+  },
+  {
+    name: 'Fiskil',
+    description:
+      'A platform for accessing real-time open banking and energy data to help you grow your business, backed with scalable back-end infrastructure.',
+    url: 'https://fiskil.com.au',
+    technologies: [
+      'React',
+      'Next.js',
+      'Typescript',
+      'Tailwindcss',
+      'Material UI',
+      'Redux Toolkit',
+      'React Query',
+      'Express.js',
+      'PostgreSQL',
+      'Firebase',
+      'AWS Amplify',
+      'Cypress',
+      'Storybook',
+    ],
+  },
+  {
+    name: 'Pepehousing',
+    description:
+      'A platform for renting a flat or room in Poland. You may browse hundreds of verified deals, contact the vendor, and pay online in a simple and secure manner.',
+    url: 'https://pepehousing.com',
+    technologies: [
+      'React',
+      'Next.js',
+      'Typescript',
+      'Tailwindcss',
+      'Redux Toolkit',
+      'React Query',
+      'Storybook',
+    ],
+  },
+];

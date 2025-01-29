@@ -9,7 +9,7 @@ const SectionHeader = ({ title, description }: SectionHeaderProps) => {
       <span className="text-gray-600 bg-gray-200 py-1 px-5 font-medium text-sm rounded-xl">
         {title}
       </span>
-      <span className="text-gray-600 text-lg text-center">{description}</span>
+      <span className="text-gray-600 text-lg text-center px-4">{description}</span>
     </div>
   );
 };
