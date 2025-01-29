@@ -1,5 +1,5 @@
-import ExperienceItem from "../ui/experienceItem"
-import SectionHeader from "../ui/sectionHeader"
+import ExperienceItem from "../ui/experienceItem";
+import SectionHeader from "../ui/sectionHeader";
 
 const experiences = () => {
   return (
@@ -11,7 +11,7 @@ const experiences = () => {
 
       <ExperienceItem />
     </section>
-  )
-}
+  );
+};
 
-export default experiences
+export default experiences;

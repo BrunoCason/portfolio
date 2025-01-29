@@ -35,12 +35,12 @@ export const navLinks = [
 
 export const socialLinks = [
   {
-    icon: <Github />,
-    url: 'https://github.com/BrunoCason',
-  },
-  {
     icon: <Linkedin />,
     url: 'https://www.linkedin.com/in/brunocason/',
+  },
+  {
+    icon: <Github />,
+    url: 'https://github.com/BrunoCason',
   }
 ];
 

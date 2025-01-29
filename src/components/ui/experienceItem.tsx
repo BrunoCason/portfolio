@@ -15,7 +15,9 @@ const ExperienceItem = () => {
           </div>
 
           <div className="space-y-4">
-            <p className="text-lg lg:text-xl font-semibold text-gray-900">{experience.position}</p>
+            <p className="text-lg lg:text-xl font-semibold text-gray-900">
+              {experience.position}
+            </p>
             <ul className="list-disc pl-6 space-y-1">
               {experience.summary.map((item, idx) => (
                 <li key={idx} className="text-base text-gray-600">
