@@ -1,7 +1,7 @@
-import SectionHeader from "../ui/sectionHeader";
 import { Mail, Phone } from "lucide-react";
-import SocialLinks from "../ui/socialLinks";
 import ContactItem from "../ui/ContactItem";
+import SectionHeader from "../ui/SectionHeader";
+import SocialLinks from "../ui/SocialLinks";
 
 const contact = () => {
   return (

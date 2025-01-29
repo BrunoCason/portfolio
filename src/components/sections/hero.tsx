@@ -1,6 +1,6 @@
 import { MapPin } from "lucide-react";
 import Image from "next/image";
-import SocialLinks from "../ui/socialLinks";
+import SocialLinks from "../ui/SocialLinks";
 
 const hero = () => {
   return (

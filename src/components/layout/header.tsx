@@ -2,7 +2,7 @@ import { navLinks } from "@/lib/data";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Moon, Sun, Menu } from "lucide-react";
-import SideMenu from "./sideMenu";
+import SideMenu from "./SideMenu";
 
 const Header = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");

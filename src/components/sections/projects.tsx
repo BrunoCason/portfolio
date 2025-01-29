@@ -1,4 +1,4 @@
-import SectionHeader from "../ui/sectionHeader";
+import SectionHeader from "../ui/SectionHeader";
 
 const projects = () => {
   return (

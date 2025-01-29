@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Skills } from "@/lib/data";
-import SectionHeader from "../ui/sectionHeader";
+import SectionHeader from "../ui/SectionHeader";
 
 const SkillsComponent = () => {
   return (
