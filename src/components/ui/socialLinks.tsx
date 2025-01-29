@@ -9,7 +9,7 @@ const SocialLinks = () => {
           href={socialLink.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="p-2 text-gray-600 rounded-full hover:bg-gray-200 transition"
+          className="p-2 text-gray-600 rounded-full hover:scale-110 transition-transform dark:text-gray-400"
         >
           {socialLink.icon}
         </a>

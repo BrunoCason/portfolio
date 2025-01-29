@@ -8,7 +8,7 @@ import Skills from "@/components/sections/Skills";
 
 export default function Home() {
   return (
-    <main className="px-4 md:px-10 lg:px-20 2xl:px-32">
+    <main className="px-4 md:px-10 lg:px-20 2xl:px-32 dark:bg-gray-950">
       <Header />
       <Hero />
       <Skills />

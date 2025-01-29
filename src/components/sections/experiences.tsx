@@ -1,4 +1,4 @@
-import ExperienceItem from "../ui/experienceItem";
+import ExperienceItem from "../ui/ExperienceItem";
 import SectionHeader from "../ui/SectionHeader";
 
 const experiences = () => {

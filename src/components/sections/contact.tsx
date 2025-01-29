@@ -25,7 +25,7 @@ const contact = () => {
       </div>
 
       <div className="flex flex-col items-center space-y-2">
-        <p className="text-gray-600">
+        <p className="text-gray-600 dark:text-gray-400">
           You may also find me on these platforms!
         </p>
         <SocialLinks />

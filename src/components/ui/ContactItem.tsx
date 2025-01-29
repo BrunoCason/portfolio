@@ -21,11 +21,11 @@ const ContactItem = ({ icon, contactText, href }: ContactItemProps) => {
   };
 
   return (
-    <div className="flex items-center space-x-5 relative">
+    <div className="flex items-center space-x-5 relative text-gray-600 dark:text-gray-400">
       {icon}
       <a
         href={href}
-        className="font-semibold text-lg md:text-4xl text-gray-900 hover:underline"
+        className="font-semibold text-lg md:text-4xl text-gray-900 hover:underline dark:text-gray-100"
       >
         {contactText}
       </a>

@@ -7,10 +7,10 @@ const hero = () => {
     <section className="flex py-16 md:py-24">
       <div className="space-y-12">
         <div className="space-y-2">
-          <h1 className="font-semibold text-4xl lg:font-bold lg:text-6xl text-gray-900">
+          <h1 className="font-semibold text-4xl lg:font-bold lg:text-6xl text-gray-900 dark:text-gray-100">
             Hi! I&apos;m Bruno Cason
           </h1>
-          <p className="text-gray-600">
+          <p className="text-gray-600 dark:text-gray-400">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -21,16 +21,16 @@ const hero = () => {
           </p>
         </div>
 
-        <div className="space-y-2 text-gray-600">
+        <div className="space-y-2 text-gray-600 dark:text-gray-400">
           <div className="flex items-center space-x-2">
             <MapPin />
-            <span>Brazil</span>
+            <span className="text-gray-600 dark:text-gray-400">Brazil</span>
           </div>
           <div className="flex items-center space-x-2">
             <div className="w-6 flex justify-center">
               <div className="h-2 w-2 rounded-full bg-green-700"></div>
             </div>
-            <span>Available for new projects</span>
+            <span className="text-gray-600 dark:text-gray-400">Available for new projects</span>
           </div>
         </div>
 

@@ -1,15 +1,16 @@
 import { navLinks } from "@/lib/data";
 import Link from "next/link";
 import { Moon, Sun, X } from "lucide-react";
+import { useTheme } from "@/context/ThemeProvider";
 
 interface SideMenuProps {
   isOpen: boolean;
   onClose: () => void;
-  theme: "light" | "dark";
-  toggleTheme: () => void;
 }
 
-const SideMenu = ({ isOpen, onClose, theme, toggleTheme }: SideMenuProps) => {
+const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <>
       {isOpen && (
@@ -20,18 +21,20 @@ const SideMenu = ({ isOpen, onClose, theme, toggleTheme }: SideMenuProps) => {
       )}
 
       <div
-        className={`fixed top-0 right-0 h-full w-72 bg-white z-50 transform text-gray-600 ${
+        className={`fixed top-0 right-0 h-full w-72 bg-gray-50 dark:bg-gray-800 z-50 transform text-gray-600 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300`}
       >
-        <div className="flex justify-between items-center p-4 border-b">
-          <p className="text-lg font-bold">Menu</p>
+        <div className="flex justify-between items-center p-4 border-b border-gray-300">
+          <p className="text-lg font-bold text-gray-900 dark:text-gray-100">
+            Menu
+          </p>
           <button onClick={onClose} aria-label="Close Menu">
             <X className="w-6 h-6 text-gray-600" />
           </button>
         </div>
         <nav className="flex flex-col gap-4 p-4">
-          <ul className="flex flex-col gap-4">
+          <ul className="flex flex-col gap-4 text-gray-600 dark:text-gray-400">
             {navLinks.map((link, index) => (
               <li key={index} className="font-medium text-base">
                 <Link href={link.href} onClick={onClose}>
@@ -41,19 +44,24 @@ const SideMenu = ({ isOpen, onClose, theme, toggleTheme }: SideMenuProps) => {
             ))}
           </ul>
         </nav>
-        <div className="flex flex-col gap-4 border-t">
-          <div className="flex items-center justify-between pt-4 px-4">
-            <span className="font-normal text-base">Switch Theme</span>
-            <button onClick={toggleTheme} aria-label="Toggle Theme">
+        <div className="flex flex-col gap-4 border-t border-gray-300">
+          <div
+            onClick={toggleTheme}
+            className="flex items-center justify-between pt-4 px-4"
+          >
+            <span className="font-normal text-base text-gray-600 dark:text-gray-400 ">
+              Switch Theme
+            </span>
+            <button aria-label="Toggle Theme">
               {theme === "light" ? (
                 <Sun className="w-5 h-5 text-gray-600" />
               ) : (
-                <Moon className="w-5 h-5 text-gray-600" />
+                <Moon className="w-5 h-5 text-gray-400" />
               )}
             </button>
           </div>
           <div className="px-4">
-            <button className="bg-gray-900 w-full py-1.5 rounded-xl text-gray-50">
+            <button className="bg-gray-900 w-full py-1.5 rounded-xl text-gray-50 dark:bg-gray-100 px-4 font-medium dark:text-gray-950">
               Download CV
             </button>
           </div>

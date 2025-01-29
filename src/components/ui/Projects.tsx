@@ -9,20 +9,20 @@ const Projects = () => {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="p-8 md:p-12 rounded-xl shadow-lg hover:shadow-2xl transition-all grid sm:grid-cols-2 gap-8 lg:gap-24 mb-10 bg-white"
+            className="p-8 md:p-12 rounded-xl shadow-lg hover:shadow-2xl transition-all grid sm:grid-cols-2 gap-8 lg:gap-24 mb-10 bg-white dark:bg-gray-800"
           >
             <div className="w-full h-32 bg-gray-50 rounded-xl"></div>
 
             <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
                 {project.name}
               </h3>
-              <p className="text-gray-600 text-base">{project.description}</p>
+              <p className="text-gray-600 text-base dark:text-gray-400">{project.description}</p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.technologies.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="text-sm font-medium bg-gray-200 text-gray-600 px-5 py-1 rounded-full"
+                    className="text-sm font-medium bg-gray-200 text-gray-600 px-5 py-1 rounded-full dark:text-gray-400 dark:bg-gray-900"
                   >
                     {tech}
                   </span>
@@ -33,7 +33,7 @@ const Projects = () => {
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600"
+                  className="text-gray-600 dark:text-gray-400"
                 >
                   <SquareArrowOutUpRight />
                 </Link>

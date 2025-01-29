@@ -4,7 +4,7 @@ import SectionHeader from "../ui/SectionHeader";
 
 const SkillsComponent = () => {
   return (
-    <section className="space-y-6 bg-gray-50 py-16 md:py-24 -mx-4 md:-mx-10 lg:-mx-20 2xl:-mx-32">
+    <section className="space-y-6 bg-gray-50 py-16 md:py-24 -mx-4 md:-mx-10 lg:-mx-20 2xl:-mx-32 dark:bg-gray-900">
       <SectionHeader
         title={"Skills"}
         description={"Skills, tools, and technologies I master."}
@@ -26,7 +26,7 @@ const SkillsComponent = () => {
               height={48}
               className="w-12 h-12"
             />
-            <span className="text-sm text-gray-600">{skill.label}</span>
+            <span className="text-sm text-gray-600 dark:text-gray-400">{skill.label}</span>
           </a>
         ))}
       </div>

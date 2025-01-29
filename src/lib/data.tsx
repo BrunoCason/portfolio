@@ -78,6 +78,7 @@ export const Skills = [
   {
     label: 'Tailwindcss',
     logo: LogoTailwindcss,
+    // darkModeLogo: LogoExpressLight,
     url: 'https://tailwindcss.com/',
   },
   {
