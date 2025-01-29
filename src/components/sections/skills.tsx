@@ -1,17 +1,14 @@
 import Image from "next/image";
 import { Skills } from "@/lib/data";
+import SectionHeader from "../ui/sectionHeader";
 
 const SkillsComponent = () => {
   return (
-    <section className="space-y-6 bg-gray-50 py-24 -mx-4 md:-mx-10 lg:-mx-20 2xl:-mx-32">
-      <div className="flex flex-col items-center space-y-4">
-        <span className="text-gray-600 bg-gray-200 py-1 px-5 font-medium text-sm rounded-xl">
-          Skills
-        </span>
-        <span className="text-gray-600 text-lg text-center">
-          Skills, tools, and technologies I master.
-        </span>
-      </div>
+    <section className="space-y-6 bg-gray-50 py-16 md:py-24 -mx-4 md:-mx-10 lg:-mx-20 2xl:-mx-32">
+      <SectionHeader
+        title={"Skills"}
+        description={"Skills, tools, and technologies I master."}
+      />
 
       <div className="grid grid-cols-3 gap-6 lg:px-60 xl:px-72 2xl:px-96">
         {Skills.map((skill) => (
