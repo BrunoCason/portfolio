@@ -1,4 +1,4 @@
-import { NavLinks } from "@/lib/data";
+import { navLinks } from "@/lib/data";
 import Link from "next/link";
 import { Moon, Sun, X } from "lucide-react";
 
@@ -32,7 +32,7 @@ const SideMenu = ({ isOpen, onClose, theme, toggleTheme }: SideMenuProps) => {
         </div>
         <nav className="flex flex-col gap-4 p-4">
           <ul className="flex flex-col gap-4">
-            {NavLinks.map((link, index) => (
+            {navLinks.map((link, index) => (
               <li key={index} className="font-medium text-base">
                 <Link href={link.href} onClick={onClose}>
                   {link.label}

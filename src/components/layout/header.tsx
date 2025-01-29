@@ -1,4 +1,4 @@
-import { NavLinks } from "@/lib/data";
+import { navLinks } from "@/lib/data";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Moon, Sun, Menu } from "lucide-react";
@@ -30,7 +30,7 @@ const Header = () => {
         <p className="font-bold text-3xl text-gray-900">Logo</p>
         <nav className="flex items-center gap-6">
           <ul className="flex list-none items-center gap-6 text-gray-600">
-            {NavLinks.map((link, index) => (
+            {navLinks.map((link, index) => (
               <li key={index} className="font-medium text-base">
                 <Link href={link.href}>{link.label}</Link>
               </li>

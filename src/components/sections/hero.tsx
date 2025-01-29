@@ -1,5 +1,5 @@
 import { MapPin } from "lucide-react";
-import { SocialLinks } from "@/lib/data";
+import { socialLinks } from "@/lib/data";
 import Image from "next/image";
 
 const hero = () => {
@@ -35,7 +35,7 @@ const hero = () => {
         </div>
 
         <div className="flex ">
-          {SocialLinks.map((socialLink, index) => (
+          {socialLinks.map((socialLink, index) => (
             <a
               key={index}
               href={socialLink.url}

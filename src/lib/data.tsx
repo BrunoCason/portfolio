@@ -5,12 +5,12 @@ import LogoReact from '/public/logos/icon-react.svg';
 import LogoNextjs from '/public/logos/icon-nextjs.svg';
 import LogoNodejs from '/public/logos/icon-nodejs.svg';
 import LogoExpress from '/public/logos/icon-express.svg';
-import LogoExpressLight from '/public/logos/icon-express-light.svg';
+// import LogoExpressLight from '/public/logos/icon-express-light.svg';
 import LogoTailwindcss from '/public/logos/icon-tailwindcss.svg';
 import LogoFigma from '/public/logos/icon-figma.svg';
 import LogoGit from '/public/logos/icon-git.svg';
 
-export const NavLinks = [
+export const navLinks = [
   {
     label: "About",
     href: "#about",
@@ -33,7 +33,7 @@ export const NavLinks = [
   },
 ];
 
-export const SocialLinks = [
+export const socialLinks = [
   {
     icon: <Github />,
     url: 'https://github.com/BrunoCason',
@@ -73,7 +73,6 @@ export const Skills = [
   {
     label: 'Express.js',
     logo: LogoExpress,
-    darkModeLogo: LogoExpressLight,
     url: 'https://expressjs.com/',
   },
   {
