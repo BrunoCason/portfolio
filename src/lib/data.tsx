@@ -12,29 +12,6 @@ import LogoGit from "/public/logos/icon-git.svg";
 
 import { SkillsDetails, ExperienceDetails, ProjectDetails } from "@/lib/types";
 
-export const navLinks = [
-  {
-    label: "About",
-    href: "#about",
-  },
-  {
-    label: "Skills",
-    href: "#skills",
-  },
-  {
-    label: "Experience",
-    href: "#experience",
-  },
-  {
-    label: "Projects",
-    href: "#projects",
-  },
-  {
-    label: "Contact",
-    href: "#contact",
-  },
-];
-
 export const socialLinks = [
   {
     icon: <Linkedin />,

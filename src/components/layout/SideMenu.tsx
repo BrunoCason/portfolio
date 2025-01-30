@@ -1,7 +1,8 @@
-import { navLinks } from "@/lib/data";
+import { navLinks, cv, switchLanguage, switchTheme } from "@/locales/header";
 import Link from "next/link";
 import { Moon, Sun, X } from "lucide-react";
 import { useTheme } from "@/context/ThemeProvider";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface SideMenuProps {
   isOpen: boolean;
@@ -10,6 +11,11 @@ interface SideMenuProps {
 
 const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
   const { theme, toggleTheme } = useTheme();
+  const { language, setLanguage } = useLanguage();
+
+  const handleLanguageChange = (lang: "en" | "pt") => {
+    setLanguage(lang);
+  };
 
   return (
     <>
@@ -35,7 +41,7 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
         </div>
         <nav className="flex flex-col gap-4 p-4">
           <ul className="flex flex-col gap-4 text-gray-600 dark:text-gray-400">
-            {navLinks.map((link, index) => (
+            {navLinks[language].map((link, index) => (
               <li key={index} className="font-medium text-base">
                 <Link href={link.href} onClick={onClose}>
                   {link.label}
@@ -44,13 +50,28 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
             ))}
           </ul>
         </nav>
-        <div className="flex flex-col gap-4 border-t border-gray-300">
+        <div className="flex flex-col gap-4 border-t border-gray-300 px-4">
+          <div
+            onClick={() =>
+              handleLanguageChange(language === "en" ? "pt" : "en")
+            }
+            className="flex items-center justify-between pt-4"
+          >
+            <span className="font-normal text-base text-gray-600 dark:text-gray-400">
+            {switchLanguage[language]}
+            </span>
+
+            <span className="font-normal text-base text-gray-600 dark:text-gray-400">
+              {language === "en" ? "En" : "Pt"}
+            </span>
+          </div>
+
           <div
             onClick={toggleTheme}
-            className="flex items-center justify-between pt-4 px-4"
+            className="flex items-center justify-between"
           >
             <span className="font-normal text-base text-gray-600 dark:text-gray-400 ">
-              Switch Theme
+            {switchTheme[language]}
             </span>
             <button aria-label="Toggle Theme">
               {theme === "light" ? (
@@ -60,9 +81,9 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
               )}
             </button>
           </div>
-          <div className="px-4">
+          <div>
             <button className="bg-gray-900 w-full py-1.5 rounded-xl text-gray-50 dark:bg-gray-100 px-4 font-medium dark:text-gray-950">
-              Download CV
+              {cv[language]}
             </button>
           </div>
         </div>
