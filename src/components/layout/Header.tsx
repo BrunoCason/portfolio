@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Moon, Sun, Menu } from "lucide-react";
 import SideMenu from "./SideMenu";
 import { useTheme } from "@/context/ThemeProvider";
 import { useLanguage } from "@/context/LanguageContext";
-import { navLinks, cv } from "@/locales/header";
+import { navLinks, cv } from "@/locales/header/header";
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
@@ -12,6 +12,7 @@ const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const { language, setLanguage } = useLanguage();
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => !prev);
@@ -26,9 +27,29 @@ const Header = () => {
     setIsDropdownOpen(false);
   };
 
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <header className="hidden md:flex justify-between items-center py-4">
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 hidden 850px:flex justify-between items-center py-4 px-4 md:px-10 lg:px-20 2xl:px-32 bg-white dark:bg-gray-950 transition-colors duration-500 ease-in-out ${
+          isScrolled ? "shadow-md" : ""
+        }`}
+      >
         <p className="font-bold text-3xl text-gray-900">Logo</p>
         <nav className="flex items-center gap-6">
           <ul className="flex list-none items-center gap-6 text-gray-600 dark:text-gray-400">
@@ -38,7 +59,7 @@ const Header = () => {
               </li>
             ))}
           </ul>
-          <div className="h-6 w-0.5 bg-gray-100 dark:bg-gray-700"></div>
+          <div className="h-6 w-0.5 bg-gray-100 dark:bg-gray-700 transition-colors duration-500 ease-in-out"></div>
           <div className="relative flex items-center gap-4">
             <button
               onClick={toggleDropdown}
@@ -78,14 +99,16 @@ const Header = () => {
                 <Moon className="w-5 h-5 text-gray-400" />
               )}
             </button>
-            <button className="bg-gray-900 dark:bg-gray-100 px-4 py-1.5 rounded-xl font-medium text-gray-50 dark:text-gray-950">
+            <button className="bg-gray-900 dark:bg-gray-100 px-4 py-1.5 rounded-xl font-medium text-gray-50 dark:text-gray-950 transition-colors duration-500 ease-in-out">
               {cv[language]}
             </button>
           </div>
         </nav>
       </header>
 
-      <header className="flex md:hidden justify-between items-center py-4">
+      <header className={`flex 850px:hidden justify-between items-center py-4 fixed top-0 left-0 right-0 z-10 px-4 bg-white dark:bg-gray-950 transition-colors duration-500 ease-in-out ${
+          isScrolled ? "shadow-md" : ""
+        }`}>
         <p className="font-bold text-3xl text-gray-900">Logo</p>
         <button onClick={toggleSidebar} aria-label="Open Menu">
           <Menu className="w-6 h-6 text-gray-600 dark:text-gray-400" />

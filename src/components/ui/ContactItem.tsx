@@ -21,11 +21,11 @@ const ContactItem = ({ icon, contactText, href }: ContactItemProps) => {
   };
 
   return (
-    <div className="flex items-center space-x-5 relative text-gray-600 dark:text-gray-400">
+    <div className="flex items-center space-x-5 relative text-gray-600 dark:text-gray-400 transition-colors duration-500 ease-in-out">
       {icon}
       <a
         href={href}
-        className="font-semibold text-lg md:text-4xl text-gray-900 hover:underline dark:text-gray-100"
+        className="font-semibold text-lg md:text-4xl text-gray-900 hover:underline dark:text-gray-100 transition-colors duration-500 ease-in-out"
       >
         {contactText}
       </a>
@@ -36,9 +36,9 @@ const ContactItem = ({ icon, contactText, href }: ContactItemProps) => {
         />
 
         {showModal && (
-          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 bg-gray-600 text-gray-200 px-3 py-2 rounded-md text-sm shadow-lg">
+          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 bg-gray-600 text-gray-200 px-3 py-2 rounded-md text-sm shadow-lg transition-colors duration-500 ease-in-out">
             Copied to clipboard!
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-gray-600 rotate-45"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-gray-600 rotate-45 transition-colors duration-500 ease-in-out"></div>
           </div>
         )}
       </div>

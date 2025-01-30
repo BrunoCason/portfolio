@@ -3,14 +3,14 @@ import { skills } from "@/lib/data";
 import SectionHeader from "../ui/SectionHeader";
 import { useTheme } from "@/context/ThemeProvider";
 import { useLanguage } from "@/context/LanguageContext";
-import { title, description } from "@/locales/skills";
+import { title, description } from "@/locales/skills/skills";
 
 const Skills = () => {
   const { theme } = useTheme();
   const { language } = useLanguage();
 
   return (
-    <section className="space-y-6 bg-gray-50 py-16 md:py-24 -mx-4 md:-mx-10 lg:-mx-20 2xl:-mx-32 dark:bg-gray-900">
+    <section className="space-y-6 bg-gray-50 py-16 md:py-24 -mx-4 md:-mx-10 lg:-mx-20 2xl:-mx-32 dark:bg-gray-900 transition-colors duration-500 ease-in-out">
       <SectionHeader
         title={title[language]}
         description={description[language]}
@@ -36,9 +36,9 @@ const Skills = () => {
               alt={skill.label}
               width={48}
               height={48}
-              className="w-12 h-12"
+              className="w-12 h-12 transition-colors duration-500 ease-in-out"
             />
-            <span className="text-sm text-gray-600 dark:text-gray-400">
+            <span className="text-sm text-gray-600 dark:text-gray-400 transition-colors duration-500 ease-in-out">
               {skill.label}
             </span>
           </a>

@@ -7,7 +7,7 @@ const Projects = () => {
   const { language } = useLanguage();
 
   return (
-    <section className="bg-gray-50 py-16 md:py-24 -mx-4 md:-mx-10 lg:-mx-20 2xl:-mx-32 space-y-12 dark:bg-gray-900">
+    <section className="bg-gray-50 py-16 md:py-24 -mx-4 md:-mx-10 lg:-mx-20 2xl:-mx-32 space-y-12 dark:bg-gray-900 transition-colors duration-500 ease-in-out">
       <SectionHeader
         title={title[language]}
         description={description[language]}

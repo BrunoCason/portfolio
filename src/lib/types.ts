@@ -6,10 +6,3 @@ export type SkillsDetails = {
   darkLogo?: string | StaticImageData;
   url: string;
 };
-
-export type ProjectDetails = {
-  name: string;
-  description: string;
-  url: string;
-  technologies: string[];
-};

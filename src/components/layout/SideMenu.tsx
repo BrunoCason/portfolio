@@ -1,4 +1,4 @@
-import { navLinks, cv, switchLanguage, switchTheme } from "@/locales/header";
+import { navLinks, cv, switchLanguage, switchTheme } from "@/locales/header/header";
 import Link from "next/link";
 import { Moon, Sun, X } from "lucide-react";
 import { useTheme } from "@/context/ThemeProvider";
@@ -21,7 +21,7 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
     <>
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-colors duration-500 ease-in-out"
           onClick={onClose}
         ></div>
       )}
@@ -29,10 +29,10 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
       <div
         className={`fixed top-0 right-0 h-full w-72 bg-gray-50 dark:bg-gray-800 z-50 transform text-gray-600 ${
           isOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-300`}
+        } transition-colors duration-500 ease-in-out `}
       >
         <div className="flex justify-between items-center p-4 border-b border-gray-300">
-          <p className="text-lg font-bold text-gray-900 dark:text-gray-100">
+          <p className="text-lg font-bold text-gray-900 dark:text-gray-100 transition-colors duration-500 ease-in-out">
             Menu
           </p>
           <button onClick={onClose} aria-label="Close Menu">
@@ -40,7 +40,7 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
           </button>
         </div>
         <nav className="flex flex-col gap-4 p-4">
-          <ul className="flex flex-col gap-4 text-gray-600 dark:text-gray-400">
+          <ul className="flex flex-col gap-4 text-gray-600 dark:text-gray-400 transition-colors duration-500 ease-in-out">
             {navLinks[language].map((link, index) => (
               <li key={index} className="font-medium text-base">
                 <Link href={link.href} onClick={onClose}>
@@ -57,11 +57,11 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
             }
             className="flex items-center justify-between pt-4"
           >
-            <span className="font-normal text-base text-gray-600 dark:text-gray-400">
+            <span className="font-normal text-base text-gray-600 dark:text-gray-400 transition-colors duration-500 ease-in-out">
             {switchLanguage[language]}
             </span>
 
-            <span className="font-normal text-base text-gray-600 dark:text-gray-400">
+            <span className="font-normal text-base text-gray-600 dark:text-gray-400 transition-colors duration-500 ease-in-out">
               {language === "en" ? "En" : "Pt"}
             </span>
           </div>
@@ -70,7 +70,7 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
             onClick={toggleTheme}
             className="flex items-center justify-between"
           >
-            <span className="font-normal text-base text-gray-600 dark:text-gray-400 ">
+            <span className="font-normal text-base text-gray-600 dark:text-gray-400 transition-colors duration-500 ease-in-out">
             {switchTheme[language]}
             </span>
             <button aria-label="Toggle Theme">
@@ -82,7 +82,7 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
             </button>
           </div>
           <div>
-            <button className="bg-gray-900 w-full py-1.5 rounded-xl text-gray-50 dark:bg-gray-100 px-4 font-medium dark:text-gray-950">
+            <button className="bg-gray-900 w-full py-1.5 rounded-xl text-gray-50 dark:bg-gray-100 px-4 font-medium dark:text-gray-950 transition-colors duration-500 ease-in-out">
               {cv[language]}
             </button>
           </div>

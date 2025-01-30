@@ -21,19 +21,19 @@ const Contact = () => {
 
       <div className="space-y-4 flex flex-col items-center">
         <ContactItem
-          icon={<Mail className="text-gray-600" />}
+          icon={<Mail className="text-gray-600 transition-colors duration-500 ease-in-out" />}
           contactText="brunocasons@gmail.com"
           href="mailto:brunocasons@gmail.com"
         />
         <ContactItem
-          icon={<Phone className="text-gray-600" />}
+          icon={<Phone className="text-gray-600 transition-colors duration-500 ease-in-out" />}
           contactText="+55 (16) 99998-5385"
           href="tel:+5516999985385"
         />
       </div>
 
       <div className="flex flex-col items-center space-y-2">
-        <p className="text-gray-600 dark:text-gray-400">
+        <p className="text-gray-600 dark:text-gray-400 transition-colors duration-500 ease-in-out">
           {connectPlataforms[language]}
         </p>
         <SocialLinks />
