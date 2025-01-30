@@ -3,7 +3,7 @@ import { skills } from "@/lib/data";
 import SectionHeader from "../ui/SectionHeader";
 import { useTheme } from "@/context/ThemeProvider";
 import { useLanguage } from "@/context/LanguageContext";
-import { title, description } from "@/locales/sectionHeader";
+import { title, description } from "@/locales/skills";
 
 const Skills = () => {
   const { theme } = useTheme();

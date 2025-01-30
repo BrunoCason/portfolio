@@ -1,12 +1,16 @@
+import { useLanguage } from "@/context/LanguageContext";
 import ExperienceItem from "../ui/ExperienceItem";
 import SectionHeader from "../ui/SectionHeader";
+import { description, title } from "@/locales/experiences/experiences";
 
-const experiences = () => {
+const Experiences = () => {
+  const { language } = useLanguage();
+
   return (
     <section className="pt-16 pb-8 md:pt-24 md:pb-12 space-y-12">
       <SectionHeader
-        title={"Experiences"}
-        description={"Here is a quick summary of my most recent experiences:"}
+        title={title[language]}
+        description={description[language]}
       />
 
       <ExperienceItem />
@@ -14,4 +18,4 @@ const experiences = () => {
   );
 };
 
-export default experiences;
+export default Experiences;
