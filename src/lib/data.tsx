@@ -10,7 +10,7 @@ import LogoTailwindcss from "/public/logos/icon-tailwindcss.svg";
 import LogoFigma from "/public/logos/icon-figma.svg";
 import LogoGit from "/public/logos/icon-git.svg";
 
-import { SkillsDetails, ExperienceDetails, ProjectDetails } from "@/lib/types";
+import { SkillsDetails, ProjectDetails } from "@/lib/types";
 
 export const socialLinks = [
   {
@@ -70,32 +70,6 @@ export const skills: SkillsDetails[] = [
     label: "Git",
     logo: LogoGit,
     url: "https://git-scm.com/",
-  },
-];
-
-export const experience: ExperienceDetails[] = [
-  {
-    company: "Freelancer",
-    position: "Full Stack Developer",
-    startDate: new Date(2022, 9),
-    currentlyWorkHere: true,
-    summary: [
-      "Worked for various clients like Fiskil, Shosho, Crowe MacKay LLP.",
-      "Worked with a variety of technologies, including React, Next.js, Typescript, Express.js, PostgreSQL, Tailwindcss, Mui, Firebase, Storybook, Cypress, and others.",
-    ],
-  },
-  {
-    company: "Compass.Uol",
-    position: "Front End Developer",
-    startDate: new Date(2024, 2),
-    endDate: new Date(2025, 0),
-    summary: [
-      "Acted as team lead in different projects.",
-      "Brainstormed new ideas & gathered requirements for internal projects.",
-      "Designed architecture of different projects (frontend + backend).",
-      "Worked on enterprise-level projects for a variety of clients.",
-      "Handled sprint planning & task distribution.",
-    ],
   },
 ];
 

@@ -18,8 +18,8 @@ export const experience: ExperienceDetailsLanguage = {
       startDate: new Date(2022, 9),
       currentlyWorkHere: true,
       summary: [
-        "Worked for various clients like Fiskil, Shosho, Crowe MacKay LLP.",
-        "Worked with a variety of technologies, including React, Next.js, Typescript, Express.js, PostgreSQL, Tailwindcss, Mui, Firebase, Storybook, Cypress, and others.",
+        "Developed an order management system for Japanese restaurants, featuring functionalities such as a shopping cart and management of products, tables, and orders.",
+        "Created customized landing pages for different market niches, focusing on responsive design and conversion optimization.",
       ],
     },
     {
@@ -29,11 +29,10 @@ export const experience: ExperienceDetailsLanguage = {
       endDate: new Date(2025, 0),
       currentlyWorkHere: false,
       summary: [
-        "Acted as team lead in different projects.",
-        "Brainstormed new ideas & gathered requirements for internal projects.",
-        "Designed architecture of different projects (frontend + backend).",
-        "Worked on enterprise-level projects for a variety of clients.",
-        "Handled sprint planning & task distribution.",
+        "Worked with the client Natura, focusing on improving and solving issues in the Social Commerce project.",
+        "Main responsibility: optimizing existing systems by resolving technical issues and implementing adjustments to enhance both performance and user experience.",
+        "Collaborated with cross-functional teams to identify, prioritize, and resolve issues, ensuring the delivery of efficient and high-quality systems.",
+        "Worked in alignment with the client's needs, using performance metrics and feedback to implement continuous improvements.",
       ],
     },
   ],
@@ -44,8 +43,8 @@ export const experience: ExperienceDetailsLanguage = {
       startDate: new Date(2022, 9),
       currentlyWorkHere: true,
       summary: [
-        "Trabalhei para diversos clientes como Fiskil, Shosho, Crowe MacKay LLP.",
-        "Trabalhei com uma variedade de tecnologias, incluindo React, Next.js, Typescript, Express.js, PostgreSQL, Tailwindcss, Mui, Firebase, Storybook, Cypress, entre outras.",
+        "Desenvolvi um sistema de gerenciamento de pedidos para restaurantes japoneses, com funcionalidades comocarrinho de compras e gerenciamento de produtos, mesas e pedidos.",
+        "Desenvolvi landing pages personalizadas para diferentes nichos de mercado, focando em design responsivo e otimização de conversões",
       ],
     },
     {
@@ -55,11 +54,10 @@ export const experience: ExperienceDetailsLanguage = {
       endDate: new Date(2025, 0),
       currentlyWorkHere: false,
       summary: [
-        "Atuei como líder de equipe em diferentes projetos.",
-        "Brainstormed novas ideias e reuni requisitos para projetos internos.",
-        "Projetei a arquitetura de diferentes projetos (frontend + backend).",
-        "Trabalhei em projetos de grande porte para diversos clientes.",
-        "Liderei o planejamento de sprints e distribuição de tarefas.",
+        "Trabalhei com o cliente Natura, focando na melhoria e resolução de problemas do projeto de Social Commerce.",
+        "Principal responsabilidade: otimizar os sistemas existentes, resolvendo questões técnicas e implementando ajustes para aprimorar tanto o desempenho quanto a experiência do usuário.",
+        "Colaborei com equipes multifuncionais para identificar, priorizar e solucionar problemas, garantindo a entrega de sistemas eficientes e de alta qualidade.",
+        "Atuação em alinhamento com as necessidades do cliente, utilizando métricas de desempenho e feedback para implementar melhorias contínuas.",
       ],
     },
   ],
