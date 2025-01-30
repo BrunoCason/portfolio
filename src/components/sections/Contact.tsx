@@ -2,13 +2,21 @@ import { Mail, Phone } from "lucide-react";
 import ContactItem from "../ui/ContactItem";
 import SectionHeader from "../ui/SectionHeader";
 import SocialLinks from "../ui/SocialLinks";
+import { useLanguage } from "@/context/LanguageContext";
+import {
+  description,
+  title,
+  connectPlataforms,
+} from "@/locales/contact/contact";
 
-const contact = () => {
+const Contact = () => {
+  const { language } = useLanguage();
+
   return (
     <section className="py-16 md:py-24 space-y-12">
       <SectionHeader
-        title="Get in touch"
-        description="What’s next? Feel free to reach out to me if you're looking for a developer, have a query, or simply want to connect."
+        title={title[language]}
+        description={description[language]}
       />
 
       <div className="space-y-4 flex flex-col items-center">
@@ -26,7 +34,7 @@ const contact = () => {
 
       <div className="flex flex-col items-center space-y-2">
         <p className="text-gray-600 dark:text-gray-400">
-          You may also find me on these platforms!
+          {connectPlataforms[language]}
         </p>
         <SocialLinks />
       </div>
@@ -34,4 +42,4 @@ const contact = () => {
   );
 };
 
-export default contact;
+export default Contact;
