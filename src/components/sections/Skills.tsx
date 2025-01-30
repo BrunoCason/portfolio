@@ -1,8 +1,11 @@
 import Image from "next/image";
-import { Skills } from "@/lib/data";
+import { skills } from "@/lib/data";
 import SectionHeader from "../ui/SectionHeader";
+import { useTheme } from "@/context/ThemeProvider";
 
-const SkillsComponent = () => {
+const Skills = () => {
+  const { theme } = useTheme();
+
   return (
     <section className="space-y-6 bg-gray-50 py-16 md:py-24 -mx-4 md:-mx-10 lg:-mx-20 2xl:-mx-32 dark:bg-gray-900">
       <SectionHeader
@@ -11,7 +14,7 @@ const SkillsComponent = () => {
       />
 
       <div className="grid grid-cols-3 gap-6 lg:px-60 xl:px-72 2xl:px-96">
-        {Skills.map((skill) => (
+        {skills.map((skill) => (
           <a
             key={skill.label}
             href={skill.url}
@@ -20,7 +23,7 @@ const SkillsComponent = () => {
             className="flex flex-col items-center gap-2 transition-transform transform hover:scale-105"
           >
             <Image
-              src={skill.logo}
+              src={skill.label === "Express.js" && skill.darkLogo && theme === "dark" ? skill.darkLogo : skill.logo}
               alt={skill.label}
               width={48}
               height={48}
@@ -34,4 +37,4 @@ const SkillsComponent = () => {
   );
 };
 
-export default SkillsComponent;
+export default Skills;
