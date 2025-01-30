@@ -1,36 +1,43 @@
 import { MapPin } from "lucide-react";
 import Image from "next/image";
 import SocialLinks from "../ui/SocialLinks";
+import {
+  greeting,
+  description,
+  country,
+  availableProjects,
+} from "@/locales/hero";
+import { useLanguage } from "@/context/LanguageContext";
 
 const hero = () => {
+  const { language } = useLanguage();
+
   return (
     <section className="flex py-16 md:py-24">
       <div className="space-y-12">
         <div className="space-y-2">
           <h1 className="font-semibold text-4xl lg:font-bold lg:text-6xl text-gray-900 dark:text-gray-100">
-            Hi! I&apos;m Bruno Cason
+            {greeting[language]}
           </h1>
           <p className="text-gray-600 dark:text-gray-400">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            {description[language]}
           </p>
         </div>
 
         <div className="space-y-2 text-gray-600 dark:text-gray-400">
           <div className="flex items-center space-x-2">
             <MapPin />
-            <span className="text-gray-600 dark:text-gray-400">Brazil</span>
+            <span className="text-gray-600 dark:text-gray-400">
+              {country[language]}
+            </span>
           </div>
           <div className="flex items-center space-x-2">
             <div className="w-6 flex justify-center">
               <div className="h-2 w-2 rounded-full bg-green-700"></div>
             </div>
-            <span className="text-gray-600 dark:text-gray-400">Available for new projects</span>
+            <span className="text-gray-600 dark:text-gray-400">
+              {availableProjects[language]}
+            </span>
           </div>
         </div>
 
