@@ -9,7 +9,7 @@ import {
 } from "@/locales/hero";
 import { useLanguage } from "@/context/LanguageContext";
 
-const hero = () => {
+const Hero = () => {
   const { language } = useLanguage();
 
   return (
@@ -58,4 +58,4 @@ const hero = () => {
   );
 };
 
-export default hero;
+export default Hero;
