@@ -7,7 +7,7 @@ const Experiences = () => {
   const { language } = useLanguage();
 
   return (
-    <section className="pt-16 pb-8 md:pt-24 md:pb-12 space-y-12">
+    <section className="pt-16 pb-8 md:pt-24 md:pb-12 space-y-12 mx-auto max-w-7xl ">
       <SectionHeader
         title={title[language]}
         description={description[language]}

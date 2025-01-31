@@ -8,8 +8,8 @@ const ProjectItem = () => {
   const projects = project[language as keyof typeof project] || project.en;
 
   return (
-    <div className="md:px-10 lg:px-20 2xl:px-32">
-      <div className="px-4 sm:px-14 md:px-10">
+    <div className="">
+      <div className="sm:px-10 md:px-10 xl:px-11">
         {projects.map((project, index) => (
           <div
             key={index}

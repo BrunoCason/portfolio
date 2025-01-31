@@ -13,7 +13,7 @@ const Hero = () => {
   const { language } = useLanguage();
 
   return (
-    <section className="flex pb-16 pt-24 md:pb-24 md:pt-36">
+    <section className="flex pb-16 pt-24 md:pb-24 md:pt-36 mx-auto max-w-7xl ">
       <div className="space-y-12">
         <div className="space-y-2">
           <h1 className="font-semibold text-4xl lg:font-bold lg:text-6xl text-gray-900 dark:text-gray-100 transition-colors duration-500 ease-in-out">
