@@ -2,22 +2,32 @@ import { useLanguage } from "@/context/LanguageContext";
 import { project } from "@/locales/projects/projects";
 import { SquareArrowOutUpRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const ProjectItem = () => {
   const { language } = useLanguage();
   const projects = project[language as keyof typeof project] || project.en;
 
   return (
-    <div className="">
+    <div>
       <div className="sm:px-10 md:px-10 xl:px-11">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="p-8 md:p-12 rounded-xl shadow-lg hover:shadow-2xl grid sm:grid-cols-2 gap-8 lg:gap-24 mb-10 bg-white dark:bg-gray-800 transition-colors duration-500 ease-in-out"
+            className="p-8 md:p-12 rounded-xl shadow-lg hover:shadow-2xl grid xl:grid-cols-2 gap-8 xl:gap-24 mb-10 bg-white dark:bg-gray-800 transition-colors duration-500 ease-in-out"
           >
-            <div className="w-full h-32 bg-gray-50 rounded-xl transition-colors duration-500 ease-in-out"></div>
+            <div className="mx-auto">
+              <Image
+                src={project.image}
+                width={500}
+                height={500}
+                alt={project.name}
+                unoptimized
+                className="rounded-xl"
+              />
+            </div>
 
-            <div className="space-y-6">
+            <div className="space-y-6 flex flex-col items-center lg:items-start">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 transition-colors duration-500 ease-in-out">
                 {project.name}
               </h3>

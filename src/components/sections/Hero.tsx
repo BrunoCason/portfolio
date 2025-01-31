@@ -46,7 +46,7 @@ const Hero = () => {
 
       <div className="flex-shrink-0">
         <Image
-          src="Me.png"
+          src="/images/Me.png"
           width={240}
           height={240}
           alt="me"

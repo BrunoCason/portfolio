@@ -23,16 +23,15 @@ const Header = () => {
   };
 
   const handleLanguageChange = (lang: "en" | "pt") => {
-    setLanguage(lang);
+    if (lang !== language) {
+      setLanguage(lang);
+    }
     setIsDropdownOpen(false);
   };
 
   const handleScroll = () => {
-    if (window.scrollY > 0) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
+    setIsScrolled(window.scrollY > 0);
+    setIsDropdownOpen(false);
   };
 
   useEffect(() => {
@@ -42,6 +41,27 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    if (isDropdownOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isDropdownOpen]);
 
   return (
     <>
@@ -75,17 +95,13 @@ const Header = () => {
                   className="absolute top-full left-0 mt-2 w-32 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700"
                 >
                   <button
-                    onClick={() =>
-                      handleLanguageChange(language === "en" ? "pt" : "en")
-                    }
+                    onClick={() => handleLanguageChange("en")}
                     className="block w-full text-left px-4 py-2 text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
                     English
                   </button>
                   <button
-                    onClick={() =>
-                      handleLanguageChange(language === "en" ? "pt" : "en")
-                    }
+                    onClick={() => handleLanguageChange("pt")}
                     className="block w-full text-left px-4 py-2 text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
                     Português

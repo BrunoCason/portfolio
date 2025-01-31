@@ -29,7 +29,7 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
       <div
         className={`fixed top-0 right-0 h-full w-72 bg-gray-50 dark:bg-gray-800 z-50 transform text-gray-600 ${
           isOpen ? "translate-x-0" : "translate-x-full"
-        } transition-colors duration-500 ease-in-out `}
+        } transition-all duration-500 ease-in-out `}
       >
         <div className="flex justify-between items-center p-4 border-b border-gray-300">
           <p className="text-lg font-bold text-gray-900 dark:text-gray-100 transition-colors duration-500 ease-in-out">
