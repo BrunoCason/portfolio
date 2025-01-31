@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Moon, Sun, X } from "lucide-react";
 import { useTheme } from "@/context/ThemeProvider";
 import { useLanguage } from "@/context/LanguageContext";
+import { useEffect } from "react";
 
 interface SideMenuProps {
   isOpen: boolean;
@@ -17,6 +18,18 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
     setLanguage(lang);
   };
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
   return (
     <>
       {isOpen && (
@@ -29,7 +42,7 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
       <div
         className={`fixed top-0 right-0 h-full w-72 bg-gray-50 dark:bg-gray-800 z-50 transform text-gray-600 ${
           isOpen ? "translate-x-0" : "translate-x-full"
-        } transition-all duration-500 ease-in-out `}
+        } transition-all duration-500 ease-in-out`}
       >
         <div className="flex justify-between items-center p-4 border-b border-gray-300">
           <p className="text-lg font-bold text-gray-900 dark:text-gray-100 transition-colors duration-500 ease-in-out">
@@ -58,7 +71,7 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
             className="flex items-center justify-between pt-4"
           >
             <span className="font-normal text-base text-gray-600 dark:text-gray-400 transition-colors duration-500 ease-in-out">
-            {switchLanguage[language]}
+              {switchLanguage[language]}
             </span>
 
             <span className="font-normal text-base text-gray-600 dark:text-gray-400 transition-colors duration-500 ease-in-out">
@@ -71,7 +84,7 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
             className="flex items-center justify-between"
           >
             <span className="font-normal text-base text-gray-600 dark:text-gray-400 transition-colors duration-500 ease-in-out">
-            {switchTheme[language]}
+              {switchTheme[language]}
             </span>
             <button aria-label="Toggle Theme">
               {theme === "light" ? (

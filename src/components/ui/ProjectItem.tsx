@@ -23,7 +23,6 @@ const ProjectItem = () => {
                 height={500}
                 alt={project.name}
                 unoptimized
-                className="rounded-xl"
               />
             </div>
 
