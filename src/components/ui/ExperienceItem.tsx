@@ -11,7 +11,7 @@ const ExperienceItem = () => {
       {experiences.map((exp, index) => (
         <div
           key={index}
-          className="mx-0 sm:mx-10 md:mx-10 xl:mx-11 p-8 bg-gray-50 dark:bg-gray-900 rounded-xl shadow-lg lg:grid grid-cols-3 mb-10 md:mb-12 transition-colors duration-500 ease-in-out"
+          className="mx-0 sm:mx-10 md:mx-10 xl:mx-11 p-8 bg-gray-50 dark:bg-gray-900 rounded-xl shadow-lg lg:grid grid-cols-3 mb-10 md:mb-12 transition-all duration-500 ease-in-out hover:shadow-2xl"
         >
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-4 dark:text-gray-100 transition-colors duration-500 ease-in-out">

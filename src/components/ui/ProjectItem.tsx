@@ -14,7 +14,7 @@ const ProjectItem = () => {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="p-8 md:p-12 rounded-xl shadow-lg hover:shadow-2xl grid xl:grid-cols-2 gap-8 xl:gap-24 mb-10 bg-white dark:bg-gray-800 transition-colors duration-500 ease-in-out"
+            className="p-8 md:p-12 rounded-xl shadow-lg hover:shadow-2xl grid xl:grid-cols-2 gap-8 xl:gap-24 mb-10 bg-white dark:bg-gray-800 transition-all duration-500 ease-in-out"
           >
             <div className="mx-auto">
               <Image
