@@ -13,7 +13,7 @@ const Contact = () => {
   const { language } = useLanguage();
 
   return (
-    <section className="py-16 md:py-24 space-y-12">
+    <section id="contact" className="py-20 md:py-24 space-y-12">
       <SectionHeader
         title={title[language]}
         description={description[language]}

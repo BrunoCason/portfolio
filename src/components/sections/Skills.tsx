@@ -10,7 +10,7 @@ const Skills = () => {
   const { language } = useLanguage();
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900 transition-colors duration-500 ease-in-out -mx-4 md:-mx-10 lg:-mx-20 2xl:-mx-32">
+    <section id="skills" className="py-20 md:py-24 bg-gray-50 dark:bg-gray-900 transition-colors duration-500 ease-in-out -mx-4 md:-mx-10 lg:-mx-20 2xl:-mx-32">
       <div className="mx-auto max-w-7xl space-y-6">
         <SectionHeader
           title={title[language]}

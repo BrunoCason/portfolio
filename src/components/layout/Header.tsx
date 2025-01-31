@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { Moon, Sun, Menu } from "lucide-react";
 import SideMenu from "./SideMenu";
@@ -63,6 +62,22 @@ const Header = () => {
     };
   }, [isDropdownOpen]);
 
+  const handleScrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      if (id === "skills") {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      } else {
+        element.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    }
+  };
+
   return (
     <>
       <header
@@ -76,7 +91,12 @@ const Header = () => {
             <ul className="flex list-none items-center gap-6 text-gray-600 dark:text-gray-400">
               {navLinks[language].map((link, index) => (
                 <li key={index} className="font-medium text-base">
-                  <Link href={link.href}>{link.label}</Link>
+                  <button
+                    onClick={() => handleScrollToSection(link.href.slice(1))}
+                    className="cursor-pointer"
+                  >
+                    {link.label}
+                  </button>
                 </li>
               ))}
             </ul>

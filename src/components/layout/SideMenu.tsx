@@ -1,5 +1,4 @@
 import { navLinks, cv, switchLanguage, switchTheme } from "@/locales/header/header";
-import Link from "next/link";
 import { Moon, Sun, X } from "lucide-react";
 import { useTheme } from "@/context/ThemeProvider";
 import { useLanguage } from "@/context/LanguageContext";
@@ -30,6 +29,23 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
     };
   }, [isOpen]);
 
+  const handleScrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      if (id === "skills") {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      } else {
+        element.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+      onClose();
+    }
+  };
+
   return (
     <>
       {isOpen && (
@@ -56,9 +72,12 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
           <ul className="flex flex-col gap-4 text-gray-600 dark:text-gray-400 transition-colors duration-500 ease-in-out">
             {navLinks[language].map((link, index) => (
               <li key={index} className="font-medium text-base">
-                <Link href={link.href} onClick={onClose}>
-                  {link.label}
-                </Link>
+                <button
+                    onClick={() => handleScrollToSection(link.href.slice(1))}
+                    className="cursor-pointer"
+                  >
+                    {link.label}
+                  </button>
               </li>
             ))}
           </ul>
