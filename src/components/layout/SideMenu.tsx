@@ -1,4 +1,9 @@
-import { navLinks, cv, switchLanguage, switchTheme } from "@/locales/header/header";
+import {
+  navLinks,
+  cv,
+  switchLanguage,
+  switchTheme,
+} from "@/locales/header/header";
 import { Moon, Sun, X } from "lucide-react";
 import { useTheme } from "@/context/ThemeProvider";
 import { useLanguage } from "@/context/LanguageContext";
@@ -71,13 +76,12 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
         <nav className="flex flex-col gap-4 p-4">
           <ul className="flex flex-col gap-4 text-gray-600 dark:text-gray-400 transition-colors duration-500 ease-in-out">
             {navLinks[language].map((link, index) => (
-              <li key={index} className="font-medium text-base">
-                <button
-                    onClick={() => handleScrollToSection(link.href.slice(1))}
-                    className="cursor-pointer"
-                  >
-                    {link.label}
-                  </button>
+              <li
+                key={index}
+                onClick={() => handleScrollToSection(link.href.slice(1))}
+                className="font-medium text-base cursor-pointer"
+              >
+                <button>{link.label}</button>
               </li>
             ))}
           </ul>

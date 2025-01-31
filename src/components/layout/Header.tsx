@@ -78,6 +78,10 @@ const Header = () => {
     }
   };
 
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       <header
@@ -86,7 +90,12 @@ const Header = () => {
         }`}
       >
         <div className="max-w-7xl w-full mx-auto flex justify-between items-center">
-          <p className="font-bold text-3xl text-gray-900">Logo</p>
+          <p
+            onClick={handleScrollToTop}
+            className="font-bold text-3xl text-gray-900 cursor-pointer"
+          >
+            {"<BC />"}
+          </p>
           <nav className="flex items-center gap-6">
             <ul className="flex list-none items-center gap-6 text-gray-600 dark:text-gray-400">
               {navLinks[language].map((link, index) => (
@@ -149,7 +158,12 @@ const Header = () => {
           isScrolled ? "shadow-md" : ""
         }`}
       >
-        <p className="font-bold text-3xl text-gray-900">Logo</p>
+        <p
+          onClick={handleScrollToTop}
+          className="font-bold text-3xl text-gray-900 cursor-pointer"
+        >
+          {"<BC />"}
+        </p>
         <button onClick={toggleSidebar} aria-label="Open Menu">
           <Menu className="w-6 h-6 text-gray-600 dark:text-gray-400" />
         </button>
