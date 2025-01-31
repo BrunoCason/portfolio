@@ -148,9 +148,13 @@ const Header = () => {
                   <Moon className="w-5 h-5 text-gray-400 hover:text-gray-400 dark:hover:text-gray-600 transition-colors duration-500 ease-in-out" />
                 )}
               </button>
-              <button className="bg-gray-900 dark:bg-gray-100 px-4 py-1.5 rounded-xl font-medium text-gray-50 dark:text-gray-950 transition-colors duration-500 ease-in-out">
+              <a
+                href="/assets/cv_BrunoCason.pdf"
+                download="Curriculo_BC.pdf"
+                className="bg-gray-900 dark:bg-gray-100 px-4 py-1.5 rounded-xl font-medium text-gray-50 dark:text-gray-950 transition-colors duration-500 ease-in-out"
+              >
                 {cv[language]}
-              </button>
+              </a>
             </div>
           </nav>
         </div>

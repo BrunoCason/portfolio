@@ -118,9 +118,13 @@ const SideMenu = ({ isOpen, onClose }: SideMenuProps) => {
             </button>
           </div>
           <div>
-            <button className="bg-gray-900 w-full py-1.5 rounded-xl text-gray-50 dark:bg-gray-100 px-4 font-medium dark:text-gray-950 transition-colors duration-500 ease-in-out">
+            <a
+              href="/assets/cv_BrunoCason.pdf"
+              download="Curriculo_BC.pdf"
+              className="bg-gray-900 block w-full text-center py-1.5 rounded-xl text-gray-50 dark:bg-gray-100 px-4 font-medium dark:text-gray-950 transition-colors duration-500 ease-in-out"
+            >
               {cv[language]}
-            </button>
+            </a>
           </div>
         </div>
       </div>
