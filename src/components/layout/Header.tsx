@@ -92,7 +92,7 @@ const Header = () => {
         <div className="max-w-7xl w-full mx-auto flex justify-between items-center">
           <p
             onClick={handleScrollToTop}
-            className="font-bold text-3xl text-gray-900 cursor-pointer dark:text-gray-100"
+            className="font-bold text-3xl text-gray-900 cursor-pointer dark:text-gray-100 transition-colors duration-500 ease-in-out"
           >
             {"<BC />"}
           </p>
@@ -167,7 +167,7 @@ const Header = () => {
       >
         <p
           onClick={handleScrollToTop}
-          className="font-bold text-3xl text-gray-900 cursor-pointer dark:text-gray-100"
+          className="font-bold text-3xl text-gray-900 cursor-pointer dark:text-gray-100 transition-colors duration-500 ease-in-out"
         >
           {"<BC />"}
         </p>
