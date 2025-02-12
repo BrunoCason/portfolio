@@ -8,12 +8,22 @@ import {
   title,
   connectPlataforms,
 } from "@/locales/contact/contact";
+import { motion } from "framer-motion";
+import { useInViewAnimation } from "@/hooks/useInViewAnimation";
 
 const Contact = () => {
   const { language } = useLanguage();
+  const { ref, isVisible } = useInViewAnimation();
 
   return (
-    <section id="contact" className="py-20 md:py-24 space-y-12">
+    <motion.section
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isVisible ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      id="contact"
+      className="py-20 md:py-24 space-y-12"
+    >
       <SectionHeader
         title={title[language]}
         description={description[language]}
@@ -21,12 +31,16 @@ const Contact = () => {
 
       <div className="space-y-4 flex flex-col items-center">
         <ContactItem
-          icon={<Mail className="text-gray-600 transition-colors duration-500 ease-in-out" />}
+          icon={
+            <Mail className="text-gray-600 transition-colors duration-500 ease-in-out" />
+          }
           contactText="brunocasons@gmail.com"
           href="mailto:brunocasons@gmail.com"
         />
         <ContactItem
-          icon={<Phone className="text-gray-600 transition-colors duration-500 ease-in-out" />}
+          icon={
+            <Phone className="text-gray-600 transition-colors duration-500 ease-in-out" />
+          }
           contactText="+55 (16) 99998-5385"
           href="tel:+5516999985385"
         />
@@ -38,7 +52,7 @@ const Contact = () => {
         </p>
         <SocialLinks />
       </div>
-    </section>
+    </motion.section>
   );
 };
 

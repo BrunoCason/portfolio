@@ -4,6 +4,7 @@ import SideMenu from "./SideMenu";
 import { useTheme } from "@/context/ThemeProvider";
 import { useLanguage } from "@/context/LanguageContext";
 import { navLinks, cv } from "@/locales/header/header";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
@@ -84,7 +85,10 @@ const Header = () => {
 
   return (
     <>
-      <header
+      <motion.header
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 hidden 850px:flex py-4 px-4 md:px-10 lg:px-20 2xl:px-32 bg-white dark:bg-gray-950 transition-colors duration-500 ease-in-out ${
           isScrolled ? "shadow-md" : ""
         }`}
@@ -149,8 +153,12 @@ const Header = () => {
                 )}
               </button>
               <a
-                href="/assets/cv_BrunoCason.pdf"
-                download="Curriculo_BC.pdf"
+                href={
+                  language === "en"
+                    ? "/assets/cv-en/cv_BrunoCason.pdf"
+                    : "/assets/cv-pt/cv_BrunoCason.pdf"
+                }
+                download="cv_BrunoCason.pdf"
                 className="bg-gray-900 dark:bg-gray-100 px-4 py-1.5 rounded-xl font-medium text-gray-50 dark:text-gray-950 transition-colors duration-500 ease-in-out"
               >
                 {cv[language]}
@@ -158,9 +166,12 @@ const Header = () => {
             </div>
           </nav>
         </div>
-      </header>
+      </motion.header>
 
-      <header
+      <motion.header
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
         className={`flex 850px:hidden justify-between items-center py-4 fixed top-0 left-0 right-0 z-10 px-4 bg-white dark:bg-gray-950 transition-colors duration-500 ease-in-out ${
           isScrolled ? "shadow-md" : ""
         }`}
@@ -174,7 +185,7 @@ const Header = () => {
         <button onClick={toggleSidebar} aria-label="Open Menu">
           <Menu className="w-6 h-6 text-gray-600 dark:text-gray-400" />
         </button>
-      </header>
+      </motion.header>
 
       <SideMenu isOpen={isSidebarOpen} onClose={toggleSidebar} />
     </>

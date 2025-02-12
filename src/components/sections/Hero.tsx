@@ -8,12 +8,22 @@ import {
   availableProjects,
 } from "@/locales/hero/hero";
 import { useLanguage } from "@/context/LanguageContext";
+import { motion } from "framer-motion";
+import { useInViewAnimation } from "@/hooks/useInViewAnimation";
 
 const Hero = () => {
   const { language } = useLanguage();
+  const { ref, isVisible } = useInViewAnimation();
 
   return (
-    <section id="about" className="flex pb-16 pt-24 md:pb-24 md:pt-36 mx-auto max-w-7xl ">
+    <motion.section
+      ref={ref}
+      initial={{ opacity: 0 }}
+      animate={isVisible ? { opacity: 1 } : {}}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      id="about"
+      className="flex pb-16 pt-24 md:pb-24 md:pt-36 mx-auto max-w-7xl "
+    >
       <div className="space-y-12">
         <div className="space-y-2">
           <h1 className="font-semibold text-4xl lg:font-bold lg:text-6xl text-gray-900 dark:text-gray-100 transition-colors duration-500 ease-in-out">
@@ -54,7 +64,7 @@ const Hero = () => {
           className="hidden md:block ml-20"
         />
       </div>
-    </section>
+    </motion.section>
   );
 };
 
