@@ -13,6 +13,22 @@ export const description = {
 export const project: ProjectDetailsLanguage = {
   en: [
     {
+      name: "EcoBolso",
+      image: "images/resume-dashboard.png",
+      description:
+        "Personal finance dashboard built to help users track incomes, expenses, and investments in real time. Includes interactive charts, account management, and intuitive data visualization to support smarter financial decisions.",
+      url: "https://ecobolso.vercel.app",
+      technologies: [
+        "Next.js",
+        "React",
+        "Typescript",
+        "Tailwindcss",
+        "Firebase",
+        "Recharts",
+        "Framer Motion",
+      ],
+    },
+    {
       name: "SushiTech",
       image: "images/sushitech.png",
       description:
@@ -62,6 +78,22 @@ export const project: ProjectDetailsLanguage = {
     },
   ],
   pt: [
+    {
+      name: "EcoBolso",
+      image: "images/resume-dashboard.png",
+      description:
+        "Dashboard de finanças pessoais desenvolvido para ajudar os usuários a acompanhar receitas, despesas e investimentos em tempo real. Conta com gráficos interativos, gerenciamento de contas e visualização intuitiva de dados para apoiar decisões financeiras mais inteligentes.",
+      url: "https://ecobolso.vercel.app",
+      technologies: [
+        "Next.js",
+        "React",
+        "Typescript",
+        "Tailwindcss",
+        "Firebase",
+        "Recharts",
+        "Framer Motion",
+      ],
+    },
     {
       name: "SushiTech",
       image: "images/sushitech.png",
