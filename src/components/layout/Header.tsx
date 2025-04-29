@@ -158,7 +158,7 @@ const Header = () => {
                     ? "/assets/cv-en/cv_BrunoCason.pdf"
                     : "/assets/cv-pt/cv_BrunoCason.pdf"
                 }
-                download="cv_BrunoCason.pdf"
+                download="BrunoCason_CV.pdf"
                 className="bg-gray-900 dark:bg-gray-100 px-4 py-1.5 rounded-xl font-medium text-gray-50 dark:text-gray-950 transition-colors duration-500 ease-in-out"
               >
                 {cv[language]}
